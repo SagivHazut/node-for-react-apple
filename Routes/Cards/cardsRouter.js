@@ -83,7 +83,6 @@ router.post("/", auth, async (req, res) => {
     card = {
       name: card.name,
       description: card.description,
-      address: card.address,
       phone: card.phone,
       image: card.image
         ? card.image
@@ -150,7 +149,7 @@ router.delete("/:id", auth, async (req, res) => {
     const cardID = req.params.id;
     let card = await Card.findById(cardID);
 
-    if (user.admin || card.userID === user._id) {
+    if (!user.admin || card.userID === user._id) {
       card = await Card.findOneAndRemove({ _id: cardID });
       return res.send(card);
     }

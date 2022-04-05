@@ -13,16 +13,10 @@ const cardSchema = new mongoose.Schema({
     minlength: 10,
     maxlength: 1004,
   },
-  address: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 256,
-  },
   phone: {
     type: String,
     required: true,
-    minlength: 9,
+    minlength: 2,
     maxlength: 14,
   },
   image: {

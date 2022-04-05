@@ -1,3 +1,4 @@
 {
-  "jwtKey": "YourPrivateKeyVer3"
+  "jwtKey": "YourPrivateKeyVer3",
+  "mongo": "mongodb://localhost/business_card_app"
 }
